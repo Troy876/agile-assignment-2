@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header } from "./components/header";
 import { Tasks } from "./components/tasks";
+import {v4} from "uuid";
 
 const LOCAL_STORAGE_KEY = "todo:savedTasks"
 
@@ -28,7 +29,7 @@ function App() {
     setTaskAndSave([
       ...tasks,
       {
-        id: crypto.randomUUID(),
+        id: v4(),
         title: taskTitle,
         isCompleted: false
       }
