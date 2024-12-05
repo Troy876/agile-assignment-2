@@ -28,4 +28,5 @@ jobs:
       - name: Test
         run: |
           npx serve -s ./dist -l 3000 &
+          sleep 15
           curl http://localhost:3000 | grep ToDo
