@@ -24,3 +24,9 @@ jobs:
 
       - name: Build app
         run: npm run build
+      
+      - name: Test
+        run: |
+          npx serve -s ./dist -l 3000 &
+          sleep 3
+          curl http://localhost:3000 | grep ToDo
