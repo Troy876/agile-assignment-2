@@ -30,3 +30,10 @@ jobs:
           npx serve -s ./dist -l 3000 &
           sleep 15
           curl http://localhost:3000 | grep ToDO
+  package:
+    name: Package
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
