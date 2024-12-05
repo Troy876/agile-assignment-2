@@ -30,6 +30,7 @@ jobs:
           npx serve -s ./dist -l 3000 &
           sleep 15
           curl http://localhost:3000 | grep ToDO
+
   package:
     name: Package
     runs-on: ubuntu-latest
@@ -37,3 +38,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      - name: Build image
+        run: |
+          docker build -t troybarrett8362/todo-app:latest .
