@@ -74,3 +74,9 @@ jobs:
           npx serve -s ./dist -l 3000 &
           sleep 15
           curl http://localhost:3000 | grep ToDO
+
+      - name: Cypress
+        uses: cypress-io/github-action@v5
+        with:
+          browser: chromium
+          config-file: cypress.config.js
